@@ -1,0 +1,39 @@
+:root {
+  --color-blue: #002d55;
+}
+.home-page {
+  background: url("../images/peak.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+.home-page > img {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  max-width: 50%;
+  aspect-ratio: 2.32 / 1;
+}
+
+.rect-space {
+  width: 100%;
+  height: 600px;
+}
+
+/* ---------- Animations ---------- */
+.home-page {
+  animation: fade-out linear forwards;
+  animation-timeline: view();
+  animation-range: exit;
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}

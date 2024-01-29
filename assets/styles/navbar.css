@@ -1,0 +1,147 @@
+:root {
+  --navbar-max-height: 2rem;
+  --navbar-new-background-color: #ffffff;
+  --navbar-new-text-color: #002d55;
+  --navbar-old-text-color: #f1f1f1;
+}
+
+@media (max-width: 700px) {
+  .nav-right {
+    display: none !important;
+  }
+  .nav-bar-mobile {
+    display: block !important;
+  }
+}
+
+/* navbar mobile css */
+i {
+  color: white;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  animation: text-color-change linear forwards;
+  animation-timeline: scroll();
+  animation-range-start: 40vh;
+  animation-range-end: 60vh;
+}
+#myLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  direction: rtl;
+  padding-bottom: 5%;
+  gap: 0.5rem;
+  display: none;
+}
+#myLinks > a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 150px;
+  font-style: normal;
+  color: #f1f1f1;
+  animation: text-color-change linear forwards;
+  animation-timeline: scroll();
+  animation-range-start: 40vh;
+  animation-range-end: 60vh;
+}
+
+/* navbar desktop css */
+.line {
+  float: right;
+  width: 100%;
+  height: 0px;
+  border: 1px solid var(--navbar-new-text-color);
+  opacity: 0.1;
+}
+
+.image-nav-bar {
+  opacity: 0;
+  max-height: var(--navbar-max-height);
+  aspect-ratio: 2.32 / 1;
+  margin-left: 0.6rem;
+  margin-top: -0.6rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+.nav-right {
+  margin-right: 2%;
+  float: right;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.nav-right > a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 150px;
+  font-style: normal;
+  color: #f1f1f1;
+  text-align: center;
+  align-self: self-end;
+  font-size: 20px;
+  display: block;
+}
+
+a:hover {
+  color: grey !important;
+  cursor: pointer;
+}
+
+.nav-bar {
+  min-height: var(--navbar-max-height);
+  position: fixed;
+  top: 0;
+  min-width: 100%;
+  z-index: 3;
+}
+
+/* ---------- Animations ---------- */
+.nav-bar {
+  animation: color-change linear forwards;
+  animation-timeline: scroll();
+  animation-range-start: 60vh;
+  animation-range-end: 80vh;
+}
+
+.line {
+  animation: hr-fadeout linear forwards;
+  animation-timeline: scroll();
+  animation-range-start: 60vh;
+  animation-range-end: 90vh;
+}
+
+.nav-right > a {
+  animation: text-color-change linear forwards;
+  animation-timeline: scroll();
+  animation-range-start: 40vh;
+  animation-range-end: 60vh;
+}
+.image-nav-bar {
+  animation: image-fadein linear forwards;
+  animation-timeline: scroll();
+  animation-range-start: 75vh;
+  animation-range-end: 100vh;
+}
+@keyframes color-change {
+  to {
+    background-color: var(--navbar-new-background-color);
+  }
+}
+@keyframes text-color-change {
+  to {
+    color: var(--navbar-new-text-color);
+  }
+}
+
+@keyframes hr-fadeout {
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes image-fadein {
+  to {
+    opacity: 1;
+  }
+}

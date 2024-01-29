@@ -1,0 +1,44 @@
+.body-page-1 {
+  min-height: 100vh;
+
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../images/spectrum-gradient.svg");
+  background-color: #ffffff;
+  background-attachment: fixed;
+  background-size: cover;
+}
+@media (max-width: 1250px) {
+  .body-page-1 {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+}
+
+/* ---------- Animations ---------- */
+.body-page-1 > .card {
+  align-self: center;
+  margin: auto;
+  scale: 0.5;
+  opacity: 0;
+  transform: translateX(20%);
+  animation: card-fadein linear forwards;
+  animation-timeline: view();
+  animation-range-start: cover;
+  animation-range-end: contain -10vh;
+}
+
+@keyframes card-fadein {
+  to {
+    transform: translateX(0%);
+    scale: 1;
+    opacity: 1;
+  }
+}
